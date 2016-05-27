@@ -76,10 +76,30 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         cell?.CGPoints.layer.addSublayer(shapeLayer)
         
         if(cell?.index == 0){
-            let line =  UIView(frame: CGRectMake(25, 129.5, 1, 79.5))
-            line.backgroundColor = UIColor.blackColor()
-            self.view.addSubview(line)
+            let line =  UIBezierPath(rect: CGRectMake(25, 50, 1, 79.5))
+            let layer = CAShapeLayer()
+            layer.path = line.CGPath
+            layer.strokeColor = UIColor.blackColor().CGColor
+            cell?.CGPoints.layer.addSublayer(layer)
             
+        }else if(cell?.index == locations.count - 1){
+            let line =  UIBezierPath(rect: CGRectMake(25, 0, 1, 30))
+            let layer = CAShapeLayer()
+            layer.path = line.CGPath
+            layer.strokeColor = UIColor.blackColor().CGColor
+            cell?.CGPoints.layer.addSublayer(layer)
+        }else{
+            let line1 =  UIBezierPath(rect: CGRectMake(25, 0, 1, 30))
+            let layer1 = CAShapeLayer()
+            layer1.path = line1.CGPath
+            layer1.strokeColor = UIColor.blackColor().CGColor
+            cell?.CGPoints.layer.addSublayer(layer1)
+            let line2 =  UIBezierPath(rect: CGRectMake(25, 50, 1, 79.5))
+            let layer2 = CAShapeLayer()
+            layer2.path = line2.CGPath
+            layer2.strokeColor = UIColor.blackColor().CGColor
+            cell?.CGPoints.layer.addSublayer(layer2)
+
         }
         
         cell?.delegate = self
