@@ -8,13 +8,22 @@
 
 import UIKit
 
-class LocationTableViewCell: UITableViewCell {
+
+
+protocol LocationTableViewCellDelegate{
+    func showActionSheet(locationAtIndex: Int)
+}
+
+class LocationTableViewCell: UITableViewCell,UIActionSheetDelegate {
 
 //    @IBOutlet var customerLabel: UILabel!
     
     @IBOutlet var customerLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var CGPoints: UIView!
+    
+    var delegate = LocationTableViewCellDelegate?()
+    var index: Int? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +37,14 @@ class LocationTableViewCell: UITableViewCell {
     }
 
     @IBAction func goToPoint(sender: AnyObject) {
+                
+        if let delegate = self.delegate{
+            delegate.showActionSheet(index!)
+        }
+        
+        
+        
+        
     }
     
     
