@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C307B131CF89EE8001B9B2A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C307B121CF89EE8001B9B2A /* LocationViewController.swift */; };
+		0C307B191CF8AED9001B9B2A /* contract (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B181CF8AED9001B9B2A /* contract (2).png */; };
+		0C307B1B1CF8AF16001B9B2A /* route (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B1A1CF8AF16001B9B2A /* route (1).png */; };
+		0C307B1E1CF8B0E2001B9B2A /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C307B1D1CF8B0E2001B9B2A /* LocationTableViewCell.swift */; };
 		0CA48DFC1CF49A2C0025A716 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA48DFB1CF49A2C0025A716 /* AppDelegate.swift */; };
-		0CA48DFE1CF49A2C0025A716 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA48DFD1CF49A2C0025A716 /* ViewController.swift */; };
 		0CA48E011CF49A2C0025A716 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CA48DFF1CF49A2C0025A716 /* Main.storyboard */; };
 		0CA48E031CF49A2C0025A716 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA48E021CF49A2C0025A716 /* Assets.xcassets */; };
 		0CA48E061CF49A2C0025A716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CA48E041CF49A2C0025A716 /* LaunchScreen.storyboard */; };
 		0CA48E111CF49A2C0025A716 /* RouteProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA48E101CF49A2C0025A716 /* RouteProTests.swift */; };
 		0CA48E1C1CF49A2C0025A716 /* RouteProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA48E1B1CF49A2C0025A716 /* RouteProUITests.swift */; };
+		0CFF3AFA1CF4A4D3003E4A02 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3AF91CF4A4D3003E4A02 /* RouteManager.swift */; };
+		0CFF3AFC1CF4A6CF003E4A02 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3AFB1CF4A6CF003E4A02 /* Location.swift */; };
+		0CFF3AFE1CF4ACB5003E4A02 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3AFD1CF4ACB5003E4A02 /* Trip.swift */; };
+		0CFF3B001CF4AD31003E4A02 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3AFF1CF4AD31003E4A02 /* Vehicle.swift */; };
+		0CFF3B021CF4AFF0003E4A02 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3B011CF4AFF0003E4A02 /* Order.swift */; };
+		0CFF3B041CF4B159003E4A02 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3B031CF4B159003E4A02 /* Customer.swift */; };
+		0CFF3B061CF4BB3E003E4A02 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3B051CF4BB3E003E4A02 /* SignInViewController.swift */; };
+		0CFF3B081CF4E45D003E4A02 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3B071CF4E45D003E4A02 /* TripViewController.swift */; };
+		0CFF3B0A1CF50255003E4A02 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF3B091CF50255003E4A02 /* TripTableViewCell.swift */; };
+		4327047A319CB8028705A67B /* Pods_RoutePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0A3C3CE9C3A8C436A56745 /* Pods_RoutePro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C307B121CF89EE8001B9B2A /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		0C307B181CF8AED9001B9B2A /* contract (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contract (2).png"; path = "../../../../Downloads/contract (2).png"; sourceTree = "<group>"; };
+		0C307B1A1CF8AF16001B9B2A /* route (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "route (1).png"; path = "../../../../Downloads/route (1).png"; sourceTree = "<group>"; };
+		0C307B1D1CF8B0E2001B9B2A /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		0CA48DF81CF49A2C0025A716 /* RoutePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA48DFB1CF49A2C0025A716 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CA48DFD1CF49A2C0025A716 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0CA48E001CF49A2C0025A716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CA48E021CF49A2C0025A716 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CA48E051CF49A2C0025A716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +63,18 @@
 		0CA48E171CF49A2C0025A716 /* RouteProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouteProUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA48E1B1CF49A2C0025A716 /* RouteProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProUITests.swift; sourceTree = "<group>"; };
 		0CA48E1D1CF49A2C0025A716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CFF3AF91CF4A4D3003E4A02 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
+		0CFF3AFB1CF4A6CF003E4A02 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0CFF3AFD1CF4ACB5003E4A02 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		0CFF3AFF1CF4AD31003E4A02 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		0CFF3B011CF4AFF0003E4A02 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		0CFF3B031CF4B159003E4A02 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		0CFF3B051CF4BB3E003E4A02 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0CFF3B071CF4E45D003E4A02 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		0CFF3B091CF50255003E4A02 /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		2162D0B75761A7378D0EDA7B /* Pods-RoutePro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutePro.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoutePro/Pods-RoutePro.release.xcconfig"; sourceTree = "<group>"; };
+		6B0A3C3CE9C3A8C436A56745 /* Pods_RoutePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFABC166D6DD189873306282 /* Pods-RoutePro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutePro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoutePro/Pods-RoutePro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4327047A319CB8028705A67B /* Pods_RoutePro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C307B1C1CF8B0B8001B9B2A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C307B181CF8AED9001B9B2A /* contract (2).png */,
+				0C307B1A1CF8AF16001B9B2A /* route (1).png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		0CA48DEF1CF49A2C0025A716 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				0CA48E0F1CF49A2C0025A716 /* RouteProTests */,
 				0CA48E1A1CF49A2C0025A716 /* RouteProUITests */,
 				0CA48DF91CF49A2C0025A716 /* Products */,
+				ED3BB20E53C2E58598F23408 /* Pods */,
+				C4B6E766CDBAC9161F492FAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +137,19 @@
 		0CA48DFA1CF49A2C0025A716 /* RoutePro */ = {
 			isa = PBXGroup;
 			children = (
+				0C307B1C1CF8B0B8001B9B2A /* Supporting Files */,
 				0CA48DFB1CF49A2C0025A716 /* AppDelegate.swift */,
-				0CA48DFD1CF49A2C0025A716 /* ViewController.swift */,
+				0CFF3AF91CF4A4D3003E4A02 /* RouteManager.swift */,
+				0CFF3AFB1CF4A6CF003E4A02 /* Location.swift */,
+				0CFF3AFD1CF4ACB5003E4A02 /* Trip.swift */,
+				0CFF3AFF1CF4AD31003E4A02 /* Vehicle.swift */,
+				0CFF3B011CF4AFF0003E4A02 /* Order.swift */,
+				0CFF3B031CF4B159003E4A02 /* Customer.swift */,
+				0CFF3B051CF4BB3E003E4A02 /* SignInViewController.swift */,
+				0CFF3B071CF4E45D003E4A02 /* TripViewController.swift */,
+				0CFF3B091CF50255003E4A02 /* TripTableViewCell.swift */,
+				0C307B121CF89EE8001B9B2A /* LocationViewController.swift */,
+				0C307B1D1CF8B0E2001B9B2A /* LocationTableViewCell.swift */,
 				0CA48DFF1CF49A2C0025A716 /* Main.storyboard */,
 				0CA48E021CF49A2C0025A716 /* Assets.xcassets */,
 				0CA48E041CF49A2C0025A716 /* LaunchScreen.storyboard */,
@@ -125,6 +176,23 @@
 			path = RouteProUITests;
 			sourceTree = "<group>";
 		};
+		C4B6E766CDBAC9161F492FAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B0A3C3CE9C3A8C436A56745 /* Pods_RoutePro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED3BB20E53C2E58598F23408 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFABC166D6DD189873306282 /* Pods-RoutePro.debug.xcconfig */,
+				2162D0B75761A7378D0EDA7B /* Pods-RoutePro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CA48E201CF49A2C0025A716 /* Build configuration list for PBXNativeTarget "RoutePro" */;
 			buildPhases = (
+				82341A38ECCEF08F3603C8A3 /* 📦 Check Pods Manifest.lock */,
 				0CA48DF41CF49A2C0025A716 /* Sources */,
 				0CA48DF51CF49A2C0025A716 /* Frameworks */,
 				0CA48DF61CF49A2C0025A716 /* Resources */,
+				67B2E1C3BEED6105035A3E2D /* 📦 Embed Pods Frameworks */,
+				2BE7C5FC98B9883D04740660 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +264,7 @@
 				TargetAttributes = {
 					0CA48DF71CF49A2C0025A716 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ZEBV42FQW4;
 					};
 					0CA48E0B1CF49A2C0025A716 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -229,8 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C307B191CF8AED9001B9B2A /* contract (2).png in Resources */,
 				0CA48E061CF49A2C0025A716 /* LaunchScreen.storyboard in Resources */,
 				0CA48E031CF49A2C0025A716 /* Assets.xcassets in Resources */,
+				0C307B1B1CF8AF16001B9B2A /* route (1).png in Resources */,
 				0CA48E011CF49A2C0025A716 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +325,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2BE7C5FC98B9883D04740660 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoutePro/Pods-RoutePro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67B2E1C3BEED6105035A3E2D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoutePro/Pods-RoutePro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82341A38ECCEF08F3603C8A3 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0CA48DF41CF49A2C0025A716 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CA48DFE1CF49A2C0025A716 /* ViewController.swift in Sources */,
+				0CFF3B001CF4AD31003E4A02 /* Vehicle.swift in Sources */,
+				0CFF3AFE1CF4ACB5003E4A02 /* Trip.swift in Sources */,
+				0CFF3AFA1CF4A4D3003E4A02 /* RouteManager.swift in Sources */,
+				0CFF3B081CF4E45D003E4A02 /* TripViewController.swift in Sources */,
+				0CFF3B0A1CF50255003E4A02 /* TripTableViewCell.swift in Sources */,
+				0C307B131CF89EE8001B9B2A /* LocationViewController.swift in Sources */,
+				0C307B1E1CF8B0E2001B9B2A /* LocationTableViewCell.swift in Sources */,
+				0CFF3B041CF4B159003E4A02 /* Customer.swift in Sources */,
+				0CFF3B061CF4BB3E003E4A02 /* SignInViewController.swift in Sources */,
+				0CFF3AFC1CF4A6CF003E4A02 /* Location.swift in Sources */,
 				0CA48DFC1CF49A2C0025A716 /* AppDelegate.swift in Sources */,
+				0CFF3B021CF4AFF0003E4A02 /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,23 +531,31 @@
 		};
 		0CA48E211CF49A2C0025A716 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFABC166D6DD189873306282 /* Pods-RoutePro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RoutePro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Innovarco.RoutePro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		0CA48E221CF49A2C0025A716 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2162D0B75761A7378D0EDA7B /* Pods-RoutePro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RoutePro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Innovarco.RoutePro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -484,6 +624,7 @@
 				0CA48E221CF49A2C0025A716 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CA48E231CF49A2C0025A716 /* Build configuration list for PBXNativeTarget "RouteProTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +633,7 @@
 				0CA48E251CF49A2C0025A716 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CA48E261CF49A2C0025A716 /* Build configuration list for PBXNativeTarget "RouteProUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +642,7 @@
 				0CA48E281CF49A2C0025A716 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

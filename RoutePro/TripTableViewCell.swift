@@ -10,6 +10,10 @@ import UIKit
 
 class TripTableViewCell: UITableViewCell {
 
+    @IBOutlet var NumberOfTrip: UILabel!
+    @IBOutlet var RangeOfTime: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
