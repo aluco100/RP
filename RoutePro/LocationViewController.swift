@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,LocationTableViewCellDelegate,UIActionSheetDelegate {
+class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,LocationTableViewCellDelegate,UIActionSheetDelegate,UIAlertViewDelegate, CLLocationManagerDelegate {
     
     var tripAsociated: Trip? = nil
     var locations: [Location] = []
     var locationSelected: Location? = nil
+    var locationManager: CLLocationManager = CLLocationManager()
 
     @IBOutlet var locationTableView: UITableView!
     
@@ -33,7 +35,12 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         //TableView Settings
         self.locationTableView.separatorStyle = .None
         self.locationTableView.allowsSelection = false
-
+        
+        //LocationManager settings
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view.
     }
 
@@ -72,6 +79,18 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         shapeLayer.strokeColor = UIColor.blackColor().CGColor
         //you can change the line width
         shapeLayer.lineWidth = 1.0
+        
+        /*
+         Si status = 1 -> Ni atrasado ni entregado
+         Si status = 2 -> Entregado
+         Si status = 3 -> Atrasado
+         */
+        
+        if(locations[indexPath.row].getStatus() == 2){
+            shapeLayer.fillColor = UIColor.greenColor().CGColor
+        }else if(locations[indexPath.row].getStatus() == 3){
+            shapeLayer.fillColor = UIColor.redColor().CGColor
+        }
         
         cell?.CGPoints.layer.addSublayer(shapeLayer)
         
@@ -140,6 +159,21 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         actionSheet.showInView(self.view)
     }
     
+    func confirmOrder(locationAtIndex: Int) {
+        self.locationSelected = locations[locationAtIndex]
+        let alertView = UIAlertView(title: "Confirmacion de Destino", message: "¿Ha LLegado a su destino?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Si")
+        alertView.show()
+    }
+    
+    //MARK: - AlertView Delegate
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        
+        if(buttonIndex == 1){
+            self.performSegueWithIdentifier("signatureSegue", sender: self)
+        }
+        
+    }
     
     //MARK: - Action Sheet Delegate
     
@@ -157,14 +191,22 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+                
+        if(segue.identifier == "signatureSegue"){
+            
+            if let destination = segue.destinationViewController as? SignatureViewController{
+                
+                destination.locationAsociated = self.locationSelected
+                destination.vehicleCoordinates = self.locationManager.location
+                
+            }
+        }
+        
     }
-    */
 
 }

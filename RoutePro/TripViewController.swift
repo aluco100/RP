@@ -101,5 +101,12 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    //MARK: - Button Interactions
+    
+    @IBAction func logout(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
 
 }

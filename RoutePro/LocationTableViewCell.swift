@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import CoreLocation
 
 
 protocol LocationTableViewCellDelegate{
     func showActionSheet(locationAtIndex: Int)
+    func confirmOrder(locationAtIndex: Int)
 }
 
 class LocationTableViewCell: UITableViewCell,UIActionSheetDelegate {
@@ -49,6 +50,11 @@ class LocationTableViewCell: UITableViewCell,UIActionSheetDelegate {
     
     
     @IBAction func proceedToSign(sender: AnyObject) {
+        
+        if let delegate = self.delegate{
+            delegate.confirmOrder(self.index!)
+        }
+        
     }
     
 }
