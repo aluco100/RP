@@ -9,13 +9,15 @@
 import Foundation
 import Alamofire
 import RealmSwift
+import CoreLocation
 
 public class RouteManager{
     
     private var Url: String
     
     init(){
-        self.Url = "http://routepro.cl/area_comercial/Rest/"
+        //self.Url = "http://routepro.cl/area_comercial/Rest/"
+        self.Url = "http://192.168.2.130:8080/route_pro_webapp/Rest/"
     }
     
     //MARK: - Methods
@@ -109,5 +111,62 @@ public class RouteManager{
         
     }
     
+    
+    //TODO: Esto se hace despues
+    
+    func validateVehicleLocation(customerId: String, vehicleId:String,coordinates:CLLocation,date: NSDate, completion:()->Void) {
+        
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.systemLocale()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        let params = [
+            "scheduled_customer_id": customerId,
+            "external_id" : vehicleId,
+            "latitude": "\(String(coordinates.coordinate.latitude))",
+            "longitude": "\(String(coordinates.coordinate.longitude))",
+            "date": formatter.stringFromDate(date)
+        ]
+        
+        Alamofire.request(.POST, "\(self.Url)position_check_mobile", parameters: params,encoding: .JSON).responseJSON(completionHandler: {
+            response in
+            //code
+            print(response.result.error)
+            print(response.result.value)
+        })
+        
+    }
+    
+    
+    func pushClientConfirmation(vehicleId: String,customerId: String,statusDelivery: String, detailDelivery: String, commentsDelivery: String,coordinates: CLLocation,completion: ()->Void){
+        
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.systemLocale()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        let params = [
+            "type_result" : statusDelivery,
+            "detail" : detailDelivery,
+            "comment" : commentsDelivery,
+            "latitude": "\(coordinates.coordinate.latitude)",
+            "longitude" : "\(coordinates.coordinate.longitude)",
+            "date" : formatter.stringFromDate(NSDate()),
+            "schedule_customer_id" : customerId,
+            "external_id" : vehicleId
+        ]
+        
+        Alamofire.request(.POST, "\(self.Url)result_delivery", parameters: params, encoding: .JSON).responseJSON(completionHandler: {
+            response in
+            
+            print(response.result)
+            if(response.result.error == nil){
+                
+                completion()
+                
+            }
+            
+        })
+        
+    }
     
 }

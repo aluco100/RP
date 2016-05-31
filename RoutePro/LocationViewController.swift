@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,LocationTableViewCellDelegate,UIActionSheetDelegate,UIAlertViewDelegate, CLLocationManagerDelegate {
     
@@ -170,6 +171,16 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         
         if(buttonIndex == 1){
+            
+            let realm = try!Realm()
+            let vehicle = realm.objects(Vehicle).first
+            
+            let RManager = RouteManager()
+            
+            RManager.validateVehicleLocation(self.locationSelected!.Customer, vehicleId: (vehicle!.getId()), coordinates: self.locationManager.location!, date: NSDate(), completion: {
+                
+            })
+            
             self.performSegueWithIdentifier("signatureSegue", sender: self)
         }
         
@@ -208,5 +219,12 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
+    
+    //MARK: - Logout
+    
+    @IBAction func logout(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 
 }

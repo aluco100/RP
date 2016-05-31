@@ -322,6 +322,18 @@
                             <constraint firstAttribute="trailing" secondItem="ly3-Uz-Og9" secondAttribute="trailing" id="nKH-RW-Nvc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3Bz-44-1X7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jO6-A0-o0c">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ixh-3l-wzW">
+                                <rect key="frame" x="548" y="6" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="T9a-wC-8T8" eventType="touchUpInside" id="hlF-N4-0la"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="locationTableView" destination="ly3-Uz-Og9" id="S8y-es-oql"/>
                         <segue destination="mQZ-Mg-ywX" kind="show" identifier="signatureSegue" id="WQ2-fz-4lm"/>
@@ -418,6 +430,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Enviar"/>
+                                <connections>
+                                    <action selector="confirmData:" destination="mQZ-Mg-ywX" eventType="touchUpInside" id="rvn-uI-lwn"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-Cb-R2b">
                                 <rect key="frame" x="20" y="253" width="560" height="229"/>
@@ -469,6 +484,18 @@
                             <constraint firstItem="PZf-fG-uNf" firstAttribute="leading" secondItem="ofG-LG-hEs" secondAttribute="leading" constant="20" id="xtf-8w-aLS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mdj-sH-fwE">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="6h7-dx-W8A">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hbH-jA-czb">
+                                <rect key="frame" x="548" y="6" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="mQZ-Mg-ywX" eventType="touchUpInside" id="nlq-m5-IeX"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentsTextView" destination="Jsh-AL-0Ex" id="Djn-5V-ntx"/>
                         <outlet property="detailsTextField" destination="TBm-Pz-56G" id="pg2-KN-9tp"/>
