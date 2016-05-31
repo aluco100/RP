@@ -118,7 +118,7 @@ public class RouteManager{
         
         let formatter = NSDateFormatter()
         formatter.locale = NSLocale.systemLocale()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let params = [
             "scheduled_customer_id": customerId,
@@ -142,7 +142,7 @@ public class RouteManager{
         
         let formatter = NSDateFormatter()
         formatter.locale = NSLocale.systemLocale()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let params = [
             "type_result" : statusDelivery,

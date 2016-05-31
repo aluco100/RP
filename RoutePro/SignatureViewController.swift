@@ -41,7 +41,7 @@ class SignatureViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         
         let dateFormatter : NSDateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale.systemLocale()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         print("date: \(dateFormatter.stringFromDate(self.dateTime))")
         
         //Picker View Settings
