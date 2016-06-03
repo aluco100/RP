@@ -16,8 +16,8 @@ public class RouteManager{
     private var Url: String
     
     init(){
-        //self.Url = "http://routepro.cl/area_comercial/Rest/"
-        self.Url = "http://192.168.2.130:8080/route_pro_webapp/Rest/"
+        self.Url = "http://routepro.cl/area_comercial/Rest/"
+        //self.Url = "http://192.168.2.130:8080/route_pro_webapp/Rest/"
     }
     
     //MARK: - Methods
@@ -151,14 +151,17 @@ public class RouteManager{
             "latitude": "\(coordinates.coordinate.latitude)",
             "longitude" : "\(coordinates.coordinate.longitude)",
             "date" : formatter.stringFromDate(NSDate()),
-            "schedule_customer_id" : customerId,
-            "external_id" : vehicleId
+            "scheduled_customer_id" : customerId,
+            "external_id" : vehicleId,
+            "firm" : "1"
         ]
+        
+        print(params)
         
         Alamofire.request(.POST, "\(self.Url)result_delivery", parameters: params, encoding: .JSON).responseJSON(completionHandler: {
             response in
             
-            print(response.result)
+            print(response.result.error)
             if(response.result.error == nil){
                 
                 completion()
@@ -167,6 +170,35 @@ public class RouteManager{
             
         })
         
+    }
+    
+    func getOptions(completion: (options:[Option])->Void){
+        Alamofire.request(.GET, "\(self.Url)delivery_option").responseJSON(completionHandler: {
+            response in
+            print(response.result.value)
+            
+            var values:[Option] = []
+            
+            let dictionary = response.result.value as? NSDictionary
+            let arrayOptions = dictionary!["options"] as? NSArray
+            
+            for i in arrayOptions! {
+                var optionValues: [String] = []
+                
+                let id = i["delivery_result_id"] as? String
+                let description = i["description"] as? String
+                let details = i["details"] as? NSArray
+                
+                for j in details!{
+                    let detailValue = j["detail"] as? String
+                    optionValues.append(detailValue!)
+                }
+                
+                let optionValue = Option(id: id!, description: description!, details: optionValues)
+                values.append(optionValue)
+            }
+            completion(options: values)
+        })
     }
     
 }

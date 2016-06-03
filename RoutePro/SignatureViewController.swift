@@ -26,11 +26,22 @@ class SignatureViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet var commentsTextView: UITextView!
     
     //variables para picker
-    let status = ["Entregado","Parcialmente Entregado", "No entregado"]
-    let details = ["Falta de tiempo","Preferencia en otro punto","Problemas en el camion","Cierre de caminos","Choque en trayecto","Problemas en indicaciones"]
+    var options: [Option] = []
+    var status:[String] = []
+    var details:[String] = ["Falta de tiempo","Preferencia en otro punto","Problemas en el camion","Cierre de caminos","Choque en trayecto","Problemas en indicaciones"]
+    var statusLocation: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let data = RouteManager()
+        data.getOptions({
+            options in
+            for i in options{
+                self.status.append(i.descriptionOption)
+                self.options.append(i)
+            }
+        })
         
         print("customer-id:\(locationAsociated!.Customer)")
         
@@ -128,11 +139,12 @@ class SignatureViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView.tag == 1){
             self.statusTextField.text = self.status[row]
-            if(self.status[row] == "Entregado"){
-                self.detailsTextField.enabled = false
-            }else{
-                self.detailsTextField.enabled = true
+            self.statusLocation = self.options[row].getId()
+            self.details = []
+            for i in options[row].detailsOption{
+                self.details.append(i)
             }
+            
         }else if(pickerView.tag == 2){
             self.detailsTextField.text = self.details[row]
         }
@@ -159,26 +171,11 @@ class SignatureViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         
         let realm = try!Realm()
         let driver = realm.objects(Vehicle).first
-        var statusLocation: Int? = nil
-        
-        switch self.statusTextField.text! {
-        case "Entregado":
-            statusLocation = 1
-            break
-        case "Parcialmente Entregado":
-            statusLocation = 2
-            break
-        case "No Entregado":
-            statusLocation = 3
-            break
-        default:
-            break
-        }
         
         //escribir datos
         let RManager = RouteManager()
         
-        RManager.pushClientConfirmation(driver!.getId(), customerId: self.locationAsociated!.Customer, statusDelivery: String(statusLocation), detailDelivery: self.detailsTextField.text!, commentsDelivery: self.commentsTextView.text, coordinates: self.vehicleCoordinates!,completion: {
+        RManager.pushClientConfirmation(driver!.getId(), customerId: self.locationAsociated!.Customer, statusDelivery: self.statusLocation, detailDelivery: self.detailsTextField.text!, commentsDelivery: self.commentsTextView.text, coordinates: self.vehicleCoordinates!,completion: {
             
             self.navigationController?.popViewControllerAnimated(true)
             

@@ -11,6 +11,7 @@
 		0C307B191CF8AED9001B9B2A /* contract (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B181CF8AED9001B9B2A /* contract (2).png */; };
 		0C307B1B1CF8AF16001B9B2A /* route (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B1A1CF8AF16001B9B2A /* route (1).png */; };
 		0C307B1E1CF8B0E2001B9B2A /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C307B1D1CF8B0E2001B9B2A /* LocationTableViewCell.swift */; };
+		0C3AEFAC1D020D310082CB30 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AEFAB1D020D310082CB30 /* Options.swift */; };
 		0C489F1D1CFCBE85008C0911 /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C489F1C1CFCBE85008C0911 /* SignatureViewController.swift */; };
 		0C489F1F1CFCC6BD008C0911 /* power-symbol-inside-a-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C489F1E1CFCC6BD008C0911 /* power-symbol-inside-a-circle.png */; };
 		0C489F211CFCCF9A008C0911 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C489F201CFCCF9A008C0911 /* CoreLocation.framework */; };
@@ -54,6 +55,7 @@
 		0C307B181CF8AED9001B9B2A /* contract (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contract (2).png"; path = "../../../../Downloads/contract (2).png"; sourceTree = "<group>"; };
 		0C307B1A1CF8AF16001B9B2A /* route (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "route (1).png"; path = "../../../../Downloads/route (1).png"; sourceTree = "<group>"; };
 		0C307B1D1CF8B0E2001B9B2A /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		0C3AEFAB1D020D310082CB30 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		0C489F1C1CFCBE85008C0911 /* SignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
 		0C489F1E1CFCC6BD008C0911 /* power-symbol-inside-a-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "power-symbol-inside-a-circle.png"; path = "../../power-symbol-inside-a-circle.png"; sourceTree = "<group>"; };
 		0C489F201CFCCF9A008C0911 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -152,6 +154,7 @@
 				0CFF3AFD1CF4ACB5003E4A02 /* Trip.swift */,
 				0CFF3AFF1CF4AD31003E4A02 /* Vehicle.swift */,
 				0CFF3B011CF4AFF0003E4A02 /* Order.swift */,
+				0C3AEFAB1D020D310082CB30 /* Options.swift */,
 				0CFF3B031CF4B159003E4A02 /* Customer.swift */,
 				0CFF3B051CF4BB3E003E4A02 /* SignInViewController.swift */,
 				0CFF3B071CF4E45D003E4A02 /* TripViewController.swift */,
@@ -395,6 +398,7 @@
 				0CFF3B081CF4E45D003E4A02 /* TripViewController.swift in Sources */,
 				0CFF3B0A1CF50255003E4A02 /* TripTableViewCell.swift in Sources */,
 				0C489F1D1CFCBE85008C0911 /* SignatureViewController.swift in Sources */,
+				0C3AEFAC1D020D310082CB30 /* Options.swift in Sources */,
 				0C307B131CF89EE8001B9B2A /* LocationViewController.swift in Sources */,
 				0C307B1E1CF8B0E2001B9B2A /* LocationTableViewCell.swift in Sources */,
 				0CFF3B041CF4B159003E4A02 /* Customer.swift in Sources */,
