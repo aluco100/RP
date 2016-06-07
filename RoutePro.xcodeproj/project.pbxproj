@@ -277,7 +277,12 @@
 				TargetAttributes = {
 					0CA48DF71CF49A2C0025A716 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ZEBV42FQW4;
+						DevelopmentTeam = JFEDF4P5DU;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					0CA48E0B1CF49A2C0025A716 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -554,9 +559,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RoutePro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Innovarco.RoutePro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Citymovil.RoutePro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -569,9 +575,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RoutePro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Innovarco.RoutePro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Citymovil.RoutePro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

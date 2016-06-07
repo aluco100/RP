@@ -22,9 +22,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.startUpdatingLocation()
+        //self.locationManager.startUpdatingLocation()
+        self.locationManager.startMonitoringSignificantLocationChanges()
+        
+        //scheduled timer
+        
+//        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
+        
+        let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler(nil)
+        let loop = NSTimer.scheduledTimerWithTimeInterval(60.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(loop, forMode: NSRunLoopCommonModes)
+        
+//        let timer: NSTimer = NSTimer(timeInterval: 3.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
         
         return true
+    }
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        print("refreshing 2")
+        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -35,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        print("background")
+
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -49,6 +73,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func refreshLatLon(){
+        
+        //Getting the data
+        //1.- Today's date
+        
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.systemLocale()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let today = NSDate()
+        
+        //2.- Latitude and Longitude
+        
+        let lat = locationManager.location!.coordinate.latitude
+        let long = locationManager.location!.coordinate.longitude
+        
+        //3.- Initialize RouteManager
+        
+        let api = RouteManager()
+        
+        print("date: \(formatter.stringFromDate(today)) lat: \(lat) lon: \(long)")
+        
+        
+//        print("refreshing")
+    }
 
 }
 
