@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3016AE1D105AAD00FBECE7 /* detailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3016AD1D105AAD00FBECE7 /* detailTableViewController.swift */; };
+		0C3016B01D10627200FBECE7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3016AF1D10627200FBECE7 /* CommentViewController.swift */; };
 		0C307B131CF89EE8001B9B2A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C307B121CF89EE8001B9B2A /* LocationViewController.swift */; };
 		0C307B191CF8AED9001B9B2A /* contract (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B181CF8AED9001B9B2A /* contract (2).png */; };
 		0C307B1B1CF8AF16001B9B2A /* route (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B1A1CF8AF16001B9B2A /* route (1).png */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C3016AD1D105AAD00FBECE7 /* detailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailTableViewController.swift; sourceTree = "<group>"; };
+		0C3016AF1D10627200FBECE7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		0C307B121CF89EE8001B9B2A /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		0C307B181CF8AED9001B9B2A /* contract (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contract (2).png"; path = "../../../../Downloads/contract (2).png"; sourceTree = "<group>"; };
 		0C307B1A1CF8AF16001B9B2A /* route (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "route (1).png"; path = "../../../../Downloads/route (1).png"; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				0C307B121CF89EE8001B9B2A /* LocationViewController.swift */,
 				0C307B1D1CF8B0E2001B9B2A /* LocationTableViewCell.swift */,
 				0C489F1C1CFCBE85008C0911 /* SignatureViewController.swift */,
+				0C3016AD1D105AAD00FBECE7 /* detailTableViewController.swift */,
+				0C3016AF1D10627200FBECE7 /* CommentViewController.swift */,
 				0CA48DFF1CF49A2C0025A716 /* Main.storyboard */,
 				0CA48E021CF49A2C0025A716 /* Assets.xcassets */,
 				0CA48E041CF49A2C0025A716 /* LaunchScreen.storyboard */,
@@ -405,7 +411,9 @@
 				0C489F1D1CFCBE85008C0911 /* SignatureViewController.swift in Sources */,
 				0C3AEFAC1D020D310082CB30 /* Options.swift in Sources */,
 				0C307B131CF89EE8001B9B2A /* LocationViewController.swift in Sources */,
+				0C3016B01D10627200FBECE7 /* CommentViewController.swift in Sources */,
 				0C307B1E1CF8B0E2001B9B2A /* LocationTableViewCell.swift in Sources */,
+				0C3016AE1D105AAD00FBECE7 /* detailTableViewController.swift in Sources */,
 				0CFF3B041CF4B159003E4A02 /* Customer.swift in Sources */,
 				0CFF3B061CF4BB3E003E4A02 /* SignInViewController.swift in Sources */,
 				0CFF3AFC1CF4A6CF003E4A02 /* Location.swift in Sources */,
