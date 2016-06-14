@@ -9,6 +9,8 @@
 import UIKit
 
 class TripTableViewCell: UITableViewCell {
+    
+    //MARK: - IBOutlets
 
     @IBOutlet var NumberOfTrip: UILabel!
     @IBOutlet var RangeOfTime: UILabel!

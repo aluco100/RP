@@ -22,6 +22,8 @@ public class RouteManager{
     
     //MARK: - Methods
     
+    //Login Verification for RoutePro users
+    
     public func signInDriverById(vehicleId: String, completion: (externalId: String)->Void){
         
         Alamofire.request(.POST, "\(self.Url)validation", parameters: ["vehicle" : vehicleId]).responseJSON(completionHandler: {
@@ -51,6 +53,8 @@ public class RouteManager{
         })
         
     }
+    
+    //Get RoutePro's trips by User
     
     public func getTripsDriverById(vehicleId: String, completion: (trips: List<Trip>)->Void){
         
@@ -114,6 +118,8 @@ public class RouteManager{
     
     //TODO: Esto se hace despues
     
+    //Vehicle's coordinates verification
+    
     func validateVehicleLocation(customerId: String, vehicleId:String,coordinates:CLLocation,date: NSDate, completion:()->Void) {
         
         let formatter = NSDateFormatter()
@@ -136,6 +142,8 @@ public class RouteManager{
         })
         
     }
+    
+    //Confirm customer details
     
     
     func pushClientConfirmation(vehicleId: String,customerId: String,statusDelivery: String, detailDelivery: String, commentsDelivery: String,coordinates: CLLocation,completion: ()->Void){
@@ -171,6 +179,8 @@ public class RouteManager{
         })
         
     }
+    
+    //Getting options of Delivery
     
     func getOptions(completion: (options:[Option])->Void){
         Alamofire.request(.GET, "\(self.Url)delivery_option").responseJSON(completionHandler: {

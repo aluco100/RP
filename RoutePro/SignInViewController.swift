@@ -10,6 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController,UIGestureRecognizerDelegate {
     
+    //MARK: - IBOutlets
     
     @IBOutlet var logBlock: UIView!
     @IBOutlet var patentTextField: UITextField!
@@ -19,36 +20,44 @@ class SignInViewController: UIViewController,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Login Box Style
+        
         logBlock.layer.cornerRadius = 5
         logBlock.layer.masksToBounds = true
+        
+        //Gesture Recognizers configuration
         
         let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         dismissGesture.delegate = self
         self.view.addGestureRecognizer(dismissGesture)
         
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: - Selectors
     
     func dismissKeyboard(){
+        
         self.view.endEditing(true)
+        
     }
 
     
     //MARK: - User Interaction
     
     @IBAction func SignIn(sender: AnyObject) {
+        
         let data = RouteManager()
+        
         data.signInDriverById(self.patentTextField.text!,completion: ({
             Void in
+            
             self.performSegueWithIdentifier("signInSegue", sender: self)
+            
         }))
     }
     

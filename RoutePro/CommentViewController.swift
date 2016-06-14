@@ -12,64 +12,75 @@ import RealmSwift
 
 class CommentViewController: UIViewController,UITextViewDelegate,UIGestureRecognizerDelegate {
     
-    //global variables
+    //MARK: - Global variables
     var detailSelected: String? = nil
     var statusSelected: String? = nil
     var driver: Vehicle? = nil
     var locationAssociated: Location? = nil
     var vehicleCoordinates: CLLocation? = nil
     
-    //IBOutlets
+    //MARK: - IBOutlets
     @IBOutlet var commentTextView: UITextView!
     @IBOutlet var sendButton: UIBarButtonItem!
     
-    //Constraints associated
+    //MARK: - Constraints associated
     @IBOutlet var topConstraint: NSLayoutConstraint!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: - Configuration
         
+        //Button Initial Status
         self.sendButton.enabled = false
         
+        //Comment Text View Configuration
         self.commentTextView.delegate = self
         
+        //Getting Driver data
         let realm = try! Realm()
         self.driver = realm.objects(Vehicle).first
         
-        print("detail: \(self.detailSelected) stat: \(self.statusSelected) driver: \(self.driver?.getId()) location: \(self.locationAssociated?.Address) coords: \(self.vehicleCoordinates?.coordinate)")
+        //Gesture Recognizers
         
         let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         dismissGesture.delegate = self
         self.view.addGestureRecognizer(dismissGesture)
         
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: - TextView Delegate
     
     func textViewDidBeginEditing(textView: UITextView) {
         
+        //Adjust Layout
         self.view.layoutIfNeeded()
+        
+        //setup the constrint
         
         self.topConstraint.constant = 320
         
+        //Enable/Disable button when there's a comment
         if(self.commentTextView.text != ""){
             self.sendButton.enabled = true
         }else{
             self.sendButton.enabled = false
         }
         
+        //setting up an animation
         UIView.animateWithDuration(1, animations: {
             self.view.layoutIfNeeded()
         })
     }
     
     func textViewDidEndEditing(textView: UITextView) {
+        
+        //IDEM
         
         self.view.layoutIfNeeded()
         
@@ -89,6 +100,7 @@ class CommentViewController: UIViewController,UITextViewDelegate,UIGestureRecogn
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        //IDEM
         if(self.commentTextView.text != ""){
             self.sendButton.enabled = true
         }else{
@@ -97,6 +109,8 @@ class CommentViewController: UIViewController,UITextViewDelegate,UIGestureRecogn
         return true
     }
     
+    
+    //MARK: - User Interaction
     
     @IBAction func sendData(sender: AnyObject) {
         
@@ -110,6 +124,8 @@ class CommentViewController: UIViewController,UITextViewDelegate,UIGestureRecogn
         })
         
     }
+    
+    //MARK: - Selectors
     
     func dismissKeyboard(){
         self.view.endEditing(true)

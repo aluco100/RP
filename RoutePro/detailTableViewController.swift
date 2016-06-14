@@ -11,7 +11,7 @@ import CoreLocation
 
 class detailTableViewController: UITableViewController {
     
-    //global variables
+    //MARK: - Global Variables
     
     var locationAssociated: Location? = nil
     var vehicleCoordinates: CLLocation? = nil
@@ -23,40 +23,50 @@ class detailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        //MARK: - Configuration
+        
+        //get details in realm database
         
         let routeManager: RouteManager = RouteManager()
         
         routeManager.getOptions({options in
             for i in options{
+                
                 if(i.descriptionOption == self.statusSelected){
+                    
                     for j in i.detailsOption{
                         self.details.append(j)
                     }
+                    
                 }
             }
+            
             self.tableView.reloadData()
+            
         })
+        
+        //Table View Settings
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return details.count
     }
+    
+    //MARK: - Table View Delegate
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -79,10 +89,7 @@ class detailTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
         if(segue.identifier == "commentSegue"){
             if let destination = segue.destinationViewController as? CommentViewController{

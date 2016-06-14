@@ -19,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Location Manager Configuration
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestAlwaysAuthorization()
-        //self.locationManager.startUpdatingLocation()
         self.locationManager.startMonitoringSignificantLocationChanges()
         
-        //scheduled timer
-        
-//        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
+        /*
+         Scheduled timer for locations updates to taking notification in RoutePro API
+         */
         
         let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
@@ -38,13 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         let loop = NSTimer.scheduledTimerWithTimeInterval(60.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(loop, forMode: NSRunLoopCommonModes)
         
-//        let timer: NSTimer = NSTimer(timeInterval: 3.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
-        
         return true
     }
     
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        print("refreshing 2")
+        
+        //Background fetch activating location tracker for RoutePro tracking
+        
         NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(AppDelegate.refreshLatLon), userInfo: nil, repeats: true)
         completionHandler(UIBackgroundFetchResult.NewData)
     }
@@ -95,8 +95,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         
         print("date: \(formatter.stringFromDate(today)) lat: \(lat) lon: \(long)")
         
+        //TODO: POST Method for lat and long tracking
         
-//        print("refreshing")
+        
     }
 
 }

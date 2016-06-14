@@ -12,10 +12,14 @@ import RealmSwift
 
 class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,LocationTableViewCellDelegate,UIActionSheetDelegate,UIAlertViewDelegate, CLLocationManagerDelegate {
     
+    
+    //MARK: - Global Variables
     var tripAsociated: Trip? = nil
     var locations: [Location] = []
     var locationSelected: Location? = nil
     var locationManager: CLLocationManager = CLLocationManager()
+    
+    //MARK: - IBOutlets
 
     @IBOutlet var locationTableView: UITableView!
     
@@ -23,13 +27,13 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(tripAsociated?.TripLocations)
+        //per each trip append trip locations in Realm database
         
         for i in (tripAsociated?.TripLocations)!{
             locations.append(i)
         }
         
-        //TableView delegate
+        //TableView delegate settings
         self.locationTableView.delegate = self
         self.locationTableView.dataSource = self
         
@@ -42,14 +46,18 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.startUpdatingLocation()
-        // Do any additional setup after loading the view.
+        
+        //Every 5 minutes update location states
+        
+        NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: #selector(LocationViewController.updatePoints), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK: - Table view Delegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -62,13 +70,21 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("locationCell", forIndexPath: indexPath) as? LocationTableViewCell
         
+        //MARK: - Table View Cell Settings
+        
         cell?.index = indexPath.row
+        
+        //Name and Time Scheduled
         
         cell?.customerLabel.text = "\(locations[indexPath.row].Name) Hora: \(locations[indexPath.row].arrivalTime)"
         
+        //Address
+        
         cell?.addressLabel?.text = locations[indexPath.row].Address
         
-        //make circle
+        //State
+        
+        //make circle width CoreGraphics
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: 25,y: 40), radius: CGFloat(10.0), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
         
         let shapeLayer = CAShapeLayer()
@@ -87,6 +103,8 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
          Si status = 3 -> Atrasado
          */
         
+        //Fill the circle with location status
+        
         if(locations[indexPath.row].getStatus() == 2){
             shapeLayer.fillColor = UIColor.greenColor().CGColor
         }else if(locations[indexPath.row].getStatus() == 3){
@@ -94,6 +112,8 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         cell?.CGPoints.layer.addSublayer(shapeLayer)
+        
+        //MARK: - CoreGraphics configuration
         
         if(cell?.index == 0){
             let line =  UIBezierPath(rect: CGRectMake(25, 50, 1, 79.5))
@@ -128,7 +148,7 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     
-    //MARK: - Custom Cell delegate
+    //MARK: - Location Table View Cell delegate
     
     func showActionSheet(locationAtIndex: Int) {
         
@@ -224,6 +244,13 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func logout(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //MARK: - Update Points
+    
+    func updatePoints(){
+        //code for updating car location and delivery status
+        print("points updated")
     }
     
 

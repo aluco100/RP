@@ -10,39 +10,36 @@ import UIKit
 import CoreLocation
 import RealmSwift
 
-//TODO: - Triple Vista!
-
 class SignatureViewController: UIViewController,UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource {
 
-    
+    //MARK: - Global Variables
     var locationAsociated: Location? = nil
     var vehicleCoordinates: CLLocation? = nil
     var dateTime: NSDate = NSDate()
-    
-    
-    //Outlets
-    @IBOutlet var detailTableView: UITableView!
-   
-    
-    
-    //variables para picker
     var options: [Option] = []
     var status:[String] = []
-    
-    //global variables
-    
     var statusSelected: String? = nil
+    
+    //MARK: - IBOutlets
+    @IBOutlet var detailTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Load status with deliveryOptions
+        
         let data = RouteManager()
+        
         data.getOptions({
             options in
+            
             for i in options{
+                
                 self.status.append(i.descriptionOption)
                 self.options.append(i)
+                
             }
+            
             self.detailTableView.reloadData()
         })
         
@@ -55,7 +52,6 @@ class SignatureViewController: UIViewController,UIGestureRecognizerDelegate,UITa
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: - TableView Delegate
@@ -82,33 +78,7 @@ class SignatureViewController: UIViewController,UIGestureRecognizerDelegate,UITa
         self.performSegueWithIdentifier("detailSegue", sender: self)
     }
     
-    
-    //MARK: - IBActions
-    
-    @IBAction func confirmData(sender: AnyObject) {
-        
-//        let realm = try!Realm()
-//        let driver = realm.objects(Vehicle).first
-        
-        //escribir datos
-//        let RManager = RouteManager()
-//
-//        RManager.pushClientConfirmation(driver!.getId(), customerId: self.locationAsociated!.Customer, statusDelivery: self.statusLocation, detailDelivery: self.detailsTextField.text!, commentsDelivery: self.commentsTextView.text, coordinates: self.vehicleCoordinates!,completion: {
-//            
-//            self.navigationController?.popViewControllerAnimated(true)
-//            
-//        })
-        
-        
-    }
-    
-    //MARK: - Logout
-    
-    @IBAction func logout(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
+    //MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "detailSegue"){

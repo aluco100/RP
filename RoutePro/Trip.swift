@@ -38,9 +38,5 @@ public class Trip: Object {
     override public static func primaryKey() -> String? {
         return "Id"
     }
-
-    
-    //MARK: - Methods
-    
     
 }

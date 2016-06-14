@@ -16,6 +16,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     var dataTrips: [Trip] = []
     var tripToSend: Trip? = nil
     
+    //MARK : - IBOutlets
+    
     @IBOutlet var tripTableView: UITableView!
     
     override func viewDidLoad() {
@@ -50,7 +52,6 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -65,6 +66,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("tripIdentifier") as? TripTableViewCell
         
         cell?.NumberOfTrip.text = "Trip \(dataTrips[indexPath.row].NumberOfTrip)"
