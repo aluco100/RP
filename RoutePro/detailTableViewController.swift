@@ -25,6 +25,8 @@ class detailTableViewController: UITableViewController {
         
         //MARK: - View Settings
         self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "signinWall")!)
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         //MARK: - Configuration
         

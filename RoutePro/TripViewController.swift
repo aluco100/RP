@@ -53,8 +53,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tripTableView.allowsMultipleSelection = false
         self.tripTableView.separatorStyle = .None
         
-        self.preferredStatusBarStyle()
-
+        self.navigationController?.navigationBar.barStyle = .Black
     }
 
     override func didReceiveMemoryWarning() {

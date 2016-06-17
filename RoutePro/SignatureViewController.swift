@@ -28,6 +28,8 @@ class SignatureViewController: UIViewController,UIGestureRecognizerDelegate,UITa
         
         //MARK: - View Settings
         self.detailTableView.backgroundColor = UIColor(patternImage: UIImage(named: "signinWall")!)
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         //Load status with deliveryOptions
         

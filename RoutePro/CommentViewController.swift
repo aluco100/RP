@@ -33,6 +33,8 @@ class CommentViewController: UIViewController,UITextViewDelegate,UIGestureRecogn
         
         //MARK: - View Settings
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "signatureWall")!)
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.commentLabel.textColor = UIColor.whiteColor()
         self.commentTextView.layer.cornerRadius = 5
         self.commentTextView.clipsToBounds = true
