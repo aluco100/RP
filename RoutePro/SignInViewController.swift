@@ -12,7 +12,6 @@ class SignInViewController: UIViewController,UIGestureRecognizerDelegate {
     
     //MARK: - IBOutlets
     
-    @IBOutlet var logBlock: UIView!
     @IBOutlet var patentTextField: UITextField!
     @IBOutlet var passTextField: UITextField!
     
@@ -20,10 +19,12 @@ class SignInViewController: UIViewController,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Login Box Style
+        //TextField settings
+        self.patentTextField.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18.0)
         
-        logBlock.layer.cornerRadius = 5
-        logBlock.layer.masksToBounds = true
+        //View settings
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "signinWall")!)
         
         //Gesture Recognizers configuration
         
@@ -36,6 +37,10 @@ class SignInViewController: UIViewController,UIGestureRecognizerDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     //MARK: - Selectors

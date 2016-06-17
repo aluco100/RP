@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1F965E1D147AD400FF6BDD /* signinWall_sketch.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1F965D1D147AD400FF6BDD /* signinWall_sketch.png */; };
 		0C3016AE1D105AAD00FBECE7 /* detailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3016AD1D105AAD00FBECE7 /* detailTableViewController.swift */; };
 		0C3016B01D10627200FBECE7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3016AF1D10627200FBECE7 /* CommentViewController.swift */; };
+		0C3016BE1D10A89300FBECE7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3016BB1D10A89300FBECE7 /* login.png */; };
+		0C3016BF1D10A89300FBECE7 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3016BC1D10A89300FBECE7 /* login@2x.png */; };
+		0C3016C01D10A89300FBECE7 /* login@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3016BD1D10A89300FBECE7 /* login@3x.png */; };
 		0C307B131CF89EE8001B9B2A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C307B121CF89EE8001B9B2A /* LocationViewController.swift */; };
 		0C307B191CF8AED9001B9B2A /* contract (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B181CF8AED9001B9B2A /* contract (2).png */; };
 		0C307B1B1CF8AF16001B9B2A /* route (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 0C307B1A1CF8AF16001B9B2A /* route (1).png */; };
@@ -53,8 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1F965D1D147AD400FF6BDD /* signinWall_sketch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signinWall_sketch.png; path = ../../signinWall_sketch.png; sourceTree = "<group>"; };
 		0C3016AD1D105AAD00FBECE7 /* detailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailTableViewController.swift; sourceTree = "<group>"; };
 		0C3016AF1D10627200FBECE7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		0C3016BB1D10A89300FBECE7 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login.png; path = ../../login.png; sourceTree = "<group>"; };
+		0C3016BC1D10A89300FBECE7 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login@2x.png"; path = "../../login@2x.png"; sourceTree = "<group>"; };
+		0C3016BD1D10A89300FBECE7 /* login@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login@3x.png"; path = "../../login@3x.png"; sourceTree = "<group>"; };
 		0C307B121CF89EE8001B9B2A /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		0C307B181CF8AED9001B9B2A /* contract (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contract (2).png"; path = "../../../../Downloads/contract (2).png"; sourceTree = "<group>"; };
 		0C307B1A1CF8AF16001B9B2A /* route (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "route (1).png"; path = "../../../../Downloads/route (1).png"; sourceTree = "<group>"; };
@@ -119,6 +127,10 @@
 		0C307B1C1CF8B0B8001B9B2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C1F965D1D147AD400FF6BDD /* signinWall_sketch.png */,
+				0C3016BB1D10A89300FBECE7 /* login.png */,
+				0C3016BC1D10A89300FBECE7 /* login@2x.png */,
+				0C3016BD1D10A89300FBECE7 /* login@3x.png */,
 				0C489F1E1CFCC6BD008C0911 /* power-symbol-inside-a-circle.png */,
 				0C307B181CF8AED9001B9B2A /* contract (2).png */,
 				0C307B1A1CF8AF16001B9B2A /* route (1).png */,
@@ -327,10 +339,14 @@
 			files = (
 				0C489F1F1CFCC6BD008C0911 /* power-symbol-inside-a-circle.png in Resources */,
 				0C307B191CF8AED9001B9B2A /* contract (2).png in Resources */,
+				0C3016BF1D10A89300FBECE7 /* login@2x.png in Resources */,
 				0CA48E061CF49A2C0025A716 /* LaunchScreen.storyboard in Resources */,
 				0CA48E031CF49A2C0025A716 /* Assets.xcassets in Resources */,
 				0C307B1B1CF8AF16001B9B2A /* route (1).png in Resources */,
 				0CA48E011CF49A2C0025A716 /* Main.storyboard in Resources */,
+				0C1F965E1D147AD400FF6BDD /* signinWall_sketch.png in Resources */,
+				0C3016BE1D10A89300FBECE7 /* login.png in Resources */,
+				0C3016C01D10A89300FBECE7 /* login@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
