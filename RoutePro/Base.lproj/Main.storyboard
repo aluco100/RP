@@ -151,6 +151,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9wF-bX-EGq">
+                        <barButtonItem key="backBarButtonItem" title="Volver" id="BUB-4a-tw9"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="dXk-Yo-Ohu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eZO-Wq-7ga">
                                 <rect key="frame" x="516" y="-10" width="64" height="64"/>
@@ -309,6 +310,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Bz-44-1X7">
+                        <barButtonItem key="backBarButtonItem" title="Trips" id="iaw-R4-EQ9"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jO6-A0-o0c">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ixh-3l-wzW">
                                 <rect key="frame" x="548" y="6" width="32" height="32"/>
@@ -364,7 +366,9 @@
                             <constraint firstAttribute="trailing" secondItem="7Q8-1m-HqO" secondAttribute="trailing" id="s7s-EB-BIT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mdj-sH-fwE"/>
+                    <navigationItem key="navigationItem" id="mdj-sH-fwE">
+                        <barButtonItem key="backBarButtonItem" title="Volver" id="qqE-U8-rlA"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="7Q8-1m-HqO" id="aKs-D9-0I6"/>
                         <segue destination="Hsv-rJ-Kyx" kind="show" identifier="detailSegue" id="Gmi-Jh-csG"/>
@@ -397,6 +401,9 @@
                             <outlet property="delegate" destination="Hsv-rJ-Kyx" id="AOT-nH-w7j"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="UeH-qu-qzX">
+                        <barButtonItem key="backBarButtonItem" title="Volver" id="EEU-yz-r8g"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="ges-4C-lx9" kind="show" identifier="commentSegue" id="JIn-uq-s63"/>
                     </connections>
@@ -446,6 +453,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kvm-dZ-rdO">
+                        <barButtonItem key="backBarButtonItem" title="Volver" id="htL-Fy-7LJ"/>
                         <barButtonItem key="rightBarButtonItem" title="Enviar" id="VGL-WD-XwL">
                             <connections>
                                 <action selector="sendData:" destination="ges-4C-lx9" id="uJ7-Ay-fUv"/>
@@ -453,6 +461,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="commentLabel" destination="gS2-F3-XbJ" id="92D-rv-afy"/>
                         <outlet property="commentTextView" destination="Raq-ox-dY0" id="4R3-1R-2ct"/>
                         <outlet property="sendButton" destination="VGL-WD-XwL" id="Owr-Pe-DgZ"/>
                         <outlet property="topConstraint" destination="gtP-Cs-hft" id="qhM-gs-ewE"/>
@@ -470,6 +479,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hLA-dy-ZMz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.70524615049362183" blue="0.57926720380783081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1gg-10-H43">

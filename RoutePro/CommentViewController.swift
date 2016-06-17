@@ -22,6 +22,7 @@ class CommentViewController: UIViewController,UITextViewDelegate,UIGestureRecogn
     //MARK: - IBOutlets
     @IBOutlet var commentTextView: UITextView!
     @IBOutlet var sendButton: UIBarButtonItem!
+    @IBOutlet var commentLabel: UILabel!
     
     //MARK: - Constraints associated
     @IBOutlet var topConstraint: NSLayoutConstraint!
@@ -29,6 +30,13 @@ class CommentViewController: UIViewController,UITextViewDelegate,UIGestureRecogn
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: - View Settings
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "signatureWall")!)
+        self.commentLabel.textColor = UIColor.whiteColor()
+        self.commentTextView.layer.cornerRadius = 5
+        self.commentTextView.clipsToBounds = true
+        
         //MARK: - Configuration
         
         //Button Initial Status

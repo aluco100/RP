@@ -26,6 +26,9 @@ class SignatureViewController: UIViewController,UIGestureRecognizerDelegate,UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - View Settings
+        self.detailTableView.backgroundColor = UIColor(patternImage: UIImage(named: "signinWall")!)
+        
         //Load status with deliveryOptions
         
         let data = RouteManager()
@@ -46,12 +49,19 @@ class SignatureViewController: UIViewController,UIGestureRecognizerDelegate,UITa
         //tableView Settings
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
+        self.detailTableView.allowsMultipleSelection = false
+        self.detailTableView.separatorStyle = .None
         
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //MARK: - View Controller Delegate
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     //MARK: - TableView Delegate
@@ -67,6 +77,8 @@ class SignatureViewController: UIViewController,UIGestureRecognizerDelegate,UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("optionIdentifier", forIndexPath: indexPath)
         
+        cell.textLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18.0)
+        cell.textLabel?.textColor = UIColor.lightGrayColor()
         cell.textLabel?.text = status[indexPath.row]
         
         return cell

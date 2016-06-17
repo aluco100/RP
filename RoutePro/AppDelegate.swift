@@ -6,6 +6,8 @@
 //  Copyright © 2016 citymovil. All rights reserved.
 //
 
+//TODO: SESION CON MEMORIA
+
 import UIKit
 import CoreLocation
 
@@ -18,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
         //Location Manager Configuration
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -97,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         
         //TODO: POST Method for lat and long tracking
         
-        
+        //TODO: Convert nsdictionary to xml and send that
     }
 
 }

@@ -27,6 +27,9 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - View settings
+        self.locationTableView.backgroundColor = UIColor(patternImage: UIImage(named: "signinWall")!)
+        
         //per each trip append trip locations in Realm database
         
         for i in (tripAsociated?.TripLocations)!{

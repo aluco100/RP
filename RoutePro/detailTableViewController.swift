@@ -23,6 +23,9 @@ class detailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - View Settings
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "signinWall")!)
+        
         //MARK: - Configuration
         
         //get details in realm database
@@ -49,11 +52,20 @@ class detailTableViewController: UITableViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.separatorStyle = .None
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //MARK: - View Controller Delegate
+    
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
     // MARK: - Table view data source
@@ -75,6 +87,8 @@ class detailTableViewController: UITableViewController {
         // Configure the cell...
         
         cell.textLabel?.text = details[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18.0)
+        cell.textLabel?.textColor = UIColor.lightGrayColor()
 
         return cell
     }

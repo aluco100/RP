@@ -23,6 +23,10 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - View Settings
+        self.tripTableView.backgroundColor = UIColor(patternImage: UIImage(named: "signinWall")!)
+        
+        
         //MARK: - Realm setting
         
         let realm = try! Realm()
@@ -46,7 +50,10 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tripTableView.delegate = self
         self.tripTableView.dataSource = self
+        self.tripTableView.allowsMultipleSelection = false
+        self.tripTableView.separatorStyle = .None
         
+        self.preferredStatusBarStyle()
 
     }
 
@@ -54,6 +61,10 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
     
     //MARK: - Table View Delegate
     
