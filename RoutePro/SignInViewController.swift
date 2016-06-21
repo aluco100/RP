@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SignInViewController: UIViewController,UIGestureRecognizerDelegate {
     
@@ -35,6 +36,21 @@ class SignInViewController: UIViewController,UIGestureRecognizerDelegate {
 
     }
 
+    //MARK: - View Did Appear
+    override func viewDidAppear(animated: Bool) {
+        
+        let realm = try! Realm()
+        
+        if let vehicle = realm.objects(Vehicle).first{
+            
+            if(vehicle.Logged){
+                
+                self.performSegueWithIdentifier("signInSegue", sender: self)
+                
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

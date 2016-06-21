@@ -36,6 +36,7 @@ public class RouteManager{
                 if let externalId = dictionary["external_id"] as? String{
                     
                     let vehicle = Vehicle(id: externalId, capacity: 0, driver: "")
+                    vehicle.setLogState(true)
                     
                     let realm = try!Realm()
                     
@@ -211,4 +212,40 @@ public class RouteManager{
         })
     }
     
+    func sendLocations(driverPatent: String,location: CLLocation,heading: CLHeading){
+        //Getting the data 
+        //1.- Get the current dateTime
+        let date = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.systemLocale()
+        formatter.dateFormat = "dd-MM-yyyy hh:mm:ss"
+        
+        //2.- Get the Current Speed
+        let velocidad = location.speed < 0 ? 0 : location.speed
+        
+        //Make the XML schema
+        let data: String = "<?xml version=\"1.0\"?>\n<row>\n<ppu>\(driverPatent)</ppu>\n<datetime>\(formatter.stringFromDate(date))</datetime>\n<latitud>\(location.coordinate.latitude)</latitud>\n<longitud>\(location.coordinate.longitude)</longitud>\n<speed>\(velocidad)</speed>\n<heading>\(heading.magneticHeading)</heading>\n<type>14</type>\n</row>"
+        print(data)
+        
+        //URL Request
+        let url: NSURL = NSURL(string: "http://")!
+        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        
+        request.HTTPMethod = "POST"
+        request.setValue("application/xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.HTTPBody = NSData(bytes: data, length: data.characters.count)
+        
+        
+        //Send Into NSURLResponse
+        
+        var response: NSURLResponse? = nil
+        
+        if let responseData = try? NSURLConnection.sendSynchronousRequest(request, returningResponse: &response){
+            print(responseData)
+        }else{
+            print("error")
+        }
+        
+        
+    }
 }

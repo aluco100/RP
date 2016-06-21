@@ -17,6 +17,7 @@ public class Vehicle: Object {
     private dynamic var Id: String = ""
     public dynamic var Capacity: Int = 1
     public dynamic var DriverName: String = ""
+    public dynamic var Logged: Bool = false
     
     //MARK: - Initializer
     
@@ -37,5 +38,9 @@ public class Vehicle: Object {
     
     public func getId()->String{
         return self.Id
+    }
+    
+    public func setLogState(state: Bool){
+        self.Logged = state
     }
 }

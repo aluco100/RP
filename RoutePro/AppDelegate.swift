@@ -10,6 +10,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate {
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.startMonitoringSignificantLocationChanges()
+        self.locationManager.startUpdatingHeading()
         
         /*
          Scheduled timer for locations updates to taking notification in RoutePro API
@@ -77,28 +79,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
     func refreshLatLon(){
         
         //Getting the data
-        //1.- Today's date
         
-        let formatter = NSDateFormatter()
-        formatter.locale = NSLocale.systemLocale()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //1.- driver id
         
-        let today = NSDate()
-        
-        //2.- Latitude and Longitude
-        
-        let lat = locationManager.location!.coordinate.latitude
-        let long = locationManager.location!.coordinate.longitude
+        let realm = try!Realm()
+        let driver = realm.objects(Vehicle).first
         
         //3.- Initialize RouteManager
         
         let api = RouteManager()
         
-        print("date: \(formatter.stringFromDate(today)) lat: \(lat) lon: \(long)")
+        api.sendLocations(driver!.getId(), location: locationManager.location!,heading: locationManager.heading!)
         
         //TODO: POST Method for lat and long tracking
         
-        //TODO: Convert nsdictionary to xml and send that
     }
 
 }

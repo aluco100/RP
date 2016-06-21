@@ -247,7 +247,18 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Logout
     
     @IBAction func logout(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let realm = try! Realm()
+        
+        let driver = realm.objects(Vehicle).first
+        
+        
+        try! realm.write({
+            driver?.Logged = false
+            realm.add(driver!, update: true)
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        })
+
     }
     
     //MARK: - Update Points
